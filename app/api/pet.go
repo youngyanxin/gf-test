@@ -16,15 +16,16 @@ type PetCheckParam struct {
 }
 
 func (a *Pet) PetArchives(r *ghttp.Request) {
-	//var check *PetCheckParam
 	var name = r.Get("name")
-	//if err := r.Parse(&check); err != nil {
-	//	r.Response.WriteJsonExit(ResApi{
-	//		Code: 1,
-	//		Msg:  err.Error(),
-	//		Data: nil,
-	//	})
-	//}
+	var check *PetCheckParam
+	//参数验证
+	if err := r.Parse(&check); err != nil {
+		r.Response.WriteJsonExit(ResApi{
+			Code: 1,
+			Msg:  err.Error(),
+			Data: nil,
+		})
+	}
 	g.Log("name glog")
 	r.Response.WriteJsonExit(ResApi{
 		Code: 0,
