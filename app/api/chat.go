@@ -40,13 +40,14 @@ var (
 // @router  /chat/index [GET]
 // @success 200 {string} string "执行结果"
 func (a *chatApi) Index(r *ghttp.Request) {
-	view := r.GetView()
-	if r.Session.Contains("chat_name") {
-		view.Assign("tplMain", "chat/include/chat.html")
-	} else {
-		view.Assign("tplMain", "chat/include/main.html")
-	}
-	r.Response.WriteTpl("chat/index.html")
+
+	//view := r.GetView()
+	//if r.Session.Contains("chat_name") {
+	//	view.Assign("tplMain", "chat/include/chat.html")
+	//} else {
+	//	view.Assign("tplMain", "chat/include/main.html")
+	//}
+	//r.Response.WriteTpl("chat/index.html")
 }
 
 // @summary 设置聊天名称页面
